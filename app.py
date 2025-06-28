@@ -82,7 +82,8 @@ st.markdown("""
 
 st.title("Multi-Agent Architectural Assistant")
 
-API_BASE = os.getenv("API_URL")
+API_BASE = st.secrets["API_URL"]  # "https://app-v4.onrender.com"
+
 
 # Session
 if "messages" not in st.session_state:
