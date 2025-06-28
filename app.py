@@ -1,10 +1,7 @@
 import streamlit as st
 import requests
 import streamlit.components.v1 as components
-import dotenv
-import os
 
-dotenv.load_dotenv()
 
 # Add enhanced CSS for chat message alignment
 st.markdown("""
@@ -82,8 +79,7 @@ st.markdown("""
 
 st.title("Multi-Agent Architectural Assistant")
 
-API_BASE = st.secrets["API_URL"]  # "https://app-v4.onrender.com"
-
+API_BASE = st.secrets.get("API_BASE_URL", "http://127.0.0.1:8000/runs")
 
 # Session
 if "messages" not in st.session_state:
